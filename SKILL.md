@@ -1,0 +1,66 @@
+---
+name: asian-adult-image-prompts
+description: Use when creating or refining adult-only, Asian-inspired editorial or boudoir image prompts from a local copy of the nsfw-prompt-templates-asian collection, especially when the request needs consistent scene, composition, wardrobe, lighting, pose, and visual-style choices.
+---
+
+# Asian Adult Image Prompts
+
+Create coherent, adult-only image prompts from the modular Asian visual-prompt collection. Treat the collection as a local reference, not as content to reproduce or redistribute.
+
+## Required Boundaries
+
+- Use only clearly adult, fictional subjects. If age, consent, or a role that could imply a minor is ambiguous, ask for clarification and do not infer adulthood.
+- Exclude sexual violence, coercion, incest, exploitation, bestiality, and sexualized depictions of real people.
+- Do not imitate a named living person or use a user's photo as an erotic prompt subject.
+- Keep the prompt compliant with the target generator's content policy and the applicable law. Offer a non-explicit editorial or boudoir alternative when needed.
+
+## Locate The Source
+
+Ask for the absolute path to the user's local clone when it is not supplied. Do not assume a temporary checkout is still available.
+
+Read `README.md` first, then load only the modules relevant to the request. See [source-map.md](references/source-map.md) for the file map, pinned source revision, and attribution requirements.
+
+Do not load the whole collection for a simple request. Start with these modules:
+
+| Need | Read |
+| --- | --- |
+| Scenario and narrative | `01-场景主题.md` |
+| Shot, lens, device, composition | `02-景别构图.md` |
+| Wardrobe and coverage | `03-裸露液体.md`, `04-服装专项.md` |
+| Lighting and mood | `05-光影氛围.md` |
+| Pose and expression | `06-姿势动作.md`, `07-表情眼神.md` |
+| Film, makeup, hair, texture, props, persona | `08` through `14` as needed |
+
+## Compose
+
+1. Extract only choices that fit the user brief. Resolve contradictions before writing, such as a phone-camera look paired with high-end cinema wording, or incompatible clothing and coverage states.
+2. Use one primary visual idea. Add at most three to five supporting details; do not turn every module into a tag dump.
+3. Assemble the English prompt in this order: subject and adult status, scene, composition/camera, wardrobe and coverage, pose/action, expression, lighting, then optional style/details.
+4. Keep the image prompt between 80 and 180 English words unless the user specifies another limit. Prefer concrete visual language over abstract mood labels.
+5. Include a short negative prompt only when the target model supports it. Focus it on image defects and composition problems, not on a second scene.
+
+## Output Format
+
+Return exactly the requested format. When the user does not specify one, use:
+
+```text
+Brief: <one Chinese sentence>
+
+Prompt:
+<English image prompt>
+
+Negative prompt:
+<optional, model-agnostic exclusions>
+```
+
+Mention any material assumption in `Brief`. Do not expose a long chain of reasoning or copy large passages from the reference collection.
+
+## Common Errors
+
+| Error | Correction |
+| --- | --- |
+| Mixing incompatible camera quality signals | Match image quality language to the stated device or remove the device. |
+| Contradictory wardrobe and coverage | Select one coherent state and describe it once. |
+| Generic words such as `cinematic` or `sexy` doing all the work | Add a specific lens, light direction, material, posture, or expression. |
+| Unclear age or consent | Stop and request confirmation of a fictional, consenting adult subject. |
+| Copying the source repository into the response | Extract only the needed choices and retain the required attribution in derivative distribution. |
