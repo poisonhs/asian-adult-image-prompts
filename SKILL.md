@@ -28,7 +28,7 @@ Do not load the whole collection for a simple request. Start with these files un
 1. Extract only choices that fit the user brief. Resolve contradictions before writing, such as a phone-camera look paired with high-end cinema wording, or incompatible clothing and coverage states.
 2. Use one primary visual idea. Add at most three to five supporting details; do not turn every module into a tag dump.
 3. Assemble the English prompt in this order: subject and adult status, scene, composition/camera, wardrobe and coverage, pose/action, expression, lighting, then optional style/details.
-4. Keep the image prompt between 80 and 180 English words unless the user specifies another limit. Prefer concrete visual language over abstract mood labels.
+4. Keep the image prompt between 80 and 150 English words unless the user specifies another limit. Prefer concrete visual language over abstract mood labels.
 5. Include a short negative prompt only when the target model supports it. Focus it on image defects and composition problems, not on a second scene.
 
 ## Output Format
