@@ -1,11 +1,11 @@
 ---
 name: asian-adult-image-prompts
-description: Use when creating or refining adult-only, Asian-inspired editorial or boudoir image prompts from a local copy of the nsfw-prompt-templates-asian collection, especially when the request needs consistent scene, composition, wardrobe, lighting, pose, and visual-style choices.
+description: Use when creating or refining adult-only, Asian-inspired editorial or boudoir image prompts from the bundled nsfw-prompt-templates-asian reference collection, especially when the request needs consistent scene, composition, wardrobe, lighting, pose, and visual-style choices.
 ---
 
 # Asian Adult Image Prompts
 
-Create coherent, adult-only image prompts from the modular Asian visual-prompt collection. Treat the collection as a local reference, not as content to reproduce or redistribute.
+Create coherent, adult-only image prompts from the bundled modular Asian visual-prompt collection. Extract only the details needed for the user's request; do not paste source passages into the response.
 
 ## Required Boundaries
 
@@ -14,13 +14,11 @@ Create coherent, adult-only image prompts from the modular Asian visual-prompt c
 - Do not imitate a named living person or use a user's photo as an erotic prompt subject.
 - Keep the prompt compliant with the target generator's content policy and the applicable law. Offer a non-explicit editorial or boudoir alternative when needed.
 
-## Locate The Source
+## Load References
 
-Ask for the absolute path to the user's local clone when it is not supplied. Do not assume a temporary checkout is still available.
+Read `references/upstream/README.md` first, then load only the modules relevant to the request. See [source-map.md](references/source-map.md) for the pinned source revision and attribution details.
 
-Read `README.md` first, then load only the modules relevant to the request. See [source-map.md](references/source-map.md) for the file map, pinned source revision, and attribution requirements.
-
-Do not load the whole collection for a simple request. Start with these modules:
+Do not load the whole collection for a simple request. Start with these files under `references/upstream/`:
 
 | Need | Read |
 | --- | --- |
@@ -63,4 +61,4 @@ Mention any material assumption in `Brief`. Do not expose a long chain of reason
 | Contradictory wardrobe and coverage | Select one coherent state and describe it once. |
 | Generic words such as `cinematic` or `sexy` doing all the work | Add a specific lens, light direction, material, posture, or expression. |
 | Unclear age or consent | Stop and request confirmation of a fictional, consenting adult subject. |
-| Copying the source repository into the response | Extract only the needed choices and retain the required attribution in derivative distribution. |
+| Copying the source repository into the response | Extract only the needed choices; do not reproduce source passages. |
