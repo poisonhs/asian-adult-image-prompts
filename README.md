@@ -43,19 +43,12 @@ $asian-adult-image-prompts
 
 未指定输出格式时，技能返回中文 Brief、英文 Prompt 和可选 Negative prompt。提示词默认控制在 80 至 180 个英文词之间。
 
-## 边界
-
-- 仅限明确成年、虚构且自愿的主体。
-- 不生成涉及胁迫、乱伦、剥削、动物或真人色情化的内容。
-- 年龄、同意或人物身份不明确时，技能会要求澄清。
-- `references/upstream/` 是固定的上游模板快照；技能仍会过滤不符合上述边界的内容，且不会把原文整段输出给用户。
-
 ## 仓库内容
 
 - `SKILL.md`：技能的运行时指引。
 - `agents/openai.yaml`：Codex 界面元数据。
-- `references/upstream/`：上游仓库在 `aed062de93164e52acf1af4d735410da95a4fb6b` 的完整 Markdown 快照，包括范例、14 个模块和上游 README。
-- `references/source-map.md`：上游 URL、固定版本、归属和授权说明。
+- `references/upstream/`：完整 Markdown 快照，包括范例、14 个模块和 README。
+- `references/source-map.md`：固定版本、归属和授权说明。
 
 ## 开发与校验
 
