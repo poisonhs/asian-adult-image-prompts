@@ -45,7 +45,7 @@ $asian-adult-image-prompts
 成年虚构人物，日系杂志风私房摄影，柔光，85mm 镜头。
 ```
 
-未指定输出格式时，技能返回中文 Brief、英文 Prompt 和可选 Negative prompt。提示词默认控制在 80 至 180 个英文词之间。
+未指定输出格式时，技能返回中文 Brief、英文 Prompt 和可选 Negative prompt。提示词默认控制在 80 至 150 个英文词之间。
 
 ## 仓库内容
 
