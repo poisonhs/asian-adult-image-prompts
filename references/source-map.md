@@ -1,16 +1,3 @@
-# Source Map And Attribution
-
-This skill vendors a fixed reference snapshot from `ShuaiHui/nsfw-prompt-templates-asian`:
-
-- Source: `https://github.com/ShuaiHui/nsfw-prompt-templates-asian`
-- Reviewed revision: `aed062de93164e52acf1af4d735410da95a4fb6b` (2026-05-05)
-
-## Bundled Snapshot
-
-The complete Markdown reference set from the reviewed revision is stored in `references/upstream/`, including `00-范例.md`, modules `01` through `14`, and the upstream `README.md`.
-
-The upstream README declares the source MIT licensed, but the reviewed revision does not contain a tracked `LICENSE` file. Keep this attribution, source URL, and revision with every redistributed copy. Obtain the upstream license text or explicit permission before changing the licensing terms of the bundled files.
-
 ## Module Map
 
 | File | Purpose |
