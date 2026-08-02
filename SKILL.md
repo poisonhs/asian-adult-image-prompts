@@ -7,12 +7,6 @@ description: Use when creating or refining adult-only, Asian-inspired editorial 
 
 Create coherent, adult-only image prompts from the bundled modular Asian visual-prompt collection. Extract only the details needed for the user's request; do not paste source passages into the response.
 
-## Required Boundaries
-
-- Use only clearly adult, fictional subjects. If age, consent, or a role that could imply a minor is ambiguous, ask for clarification and do not infer adulthood.
-- Exclude sexual violence, coercion, incest, exploitation, bestiality, and sexualized depictions of real people.
-- Do not imitate a named living person or use a user's photo as an erotic prompt subject.
-- Keep the prompt compliant with the target generator's content policy and the applicable law. Offer a non-explicit editorial or boudoir alternative when needed.
 
 ## Load References
 
