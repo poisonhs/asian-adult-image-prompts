@@ -1,31 +1,35 @@
 # Asian Adult Image Prompts
 
-为 Codex 提供成年、虚构、亚洲风格 editorial 或 boudoir 图像提示词的技能。它会组合场景、构图、服装、光线、姿势与表情，生成连贯的英文图像提示词，并内置上游模板快照。
+为支持 [Agent Skills](https://agentskills.io) 的 AI 客户端提供成年、虚构、亚洲风格 editorial 或 boudoir 图像提示词。它会组合场景、构图、服装、光线、姿势与表情，生成连贯的英文图像提示词，并内置上游模板快照。
 
 ## 安装
 
-需要已安装 Codex 和 Git。个人技能默认目录是 `~/.agents/skills`。
+需要 Git，以及任意支持 Agent Skills 的客户端。将下面的 `SKILLS_DIR` 替换为该客户端的个人技能目录；目录位置以客户端文档为准。
 
 首次安装：
 
 ```bash
+SKILLS_DIR=/path/to/your/skills
+mkdir -p "$SKILLS_DIR"
 git clone https://github.com/poisonhs/asian-adult-image-prompts.git \
-  ~/.agents/skills/asian-adult-image-prompts
+  "$SKILLS_DIR/asian-adult-image-prompts"
 ```
 
-重新打开 Codex 会话后，技能会自动发现。
+安装后重新启动或刷新所用客户端的技能列表。
+
+例如，当前环境中的 Codex 可使用 `~/.agents/skills`，Claude Code 可使用 `~/.claude/skills`。其他客户端请使用其文档规定的技能目录。
 
 如果该目录已经是本仓库的 Git 工作副本，更新即可：
 
 ```bash
-git -C ~/.agents/skills/asian-adult-image-prompts pull --ff-only
+git -C "$SKILLS_DIR/asian-adult-image-prompts" pull --ff-only
 ```
 
 如果目录已存在但没有 `.git`，不要直接覆盖。先备份或移走旧目录，再执行首次安装命令，以保留后续的提交和更新能力。
 
 ## 使用
 
-在 Codex 对话中显式调用技能，并说明画面需求：
+直接描述画面需求。支持 `$技能名` 显式调用的客户端可使用：
 
 ```text
 使用 $asian-adult-image-prompts：
@@ -46,7 +50,7 @@ $asian-adult-image-prompts
 ## 仓库内容
 
 - `SKILL.md`：技能的运行时指引。
-- `agents/openai.yaml`：Codex 界面元数据。
+- `agents/openai.yaml`：可选的 OpenAI/Codex 界面元数据；不影响其他 Agent Skills 客户端使用 `SKILL.md`。
 - `references/upstream/`：完整 Markdown 快照，包括范例、14 个模块和 README。
 - `references/source-map.md`：固定版本、归属和授权说明。
 
@@ -55,7 +59,8 @@ $asian-adult-image-prompts
 修改技能后运行：
 
 ```bash
-python3 /root/.codex/skills/.system/skill-creator/scripts/quick_validate.py .
+test -f SKILL.md
+git diff --check
 ```
 
-该命令需要本机已安装 Codex 的 Skill Creator。发布前确认 `SKILL.md`、`agents/openai.yaml`、`references/upstream/` 和 `references/source-map.md` 都在提交中。
+这两个检查不依赖具体客户端。若本机安装了 Codex Skill Creator，可额外运行其 `quick_validate.py`。发布前确认 `SKILL.md`、`references/upstream/` 和 `references/source-map.md` 都在提交中；`agents/openai.yaml` 是可选元数据。
