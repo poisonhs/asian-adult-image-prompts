@@ -1,6 +1,6 @@
 # Asian Adult Image Prompts
 
-为支持 [Agent Skills](https://agentskills.io) 的 AI 客户端提供成年、虚构、亚洲风格 editorial 或 boudoir 图像提示词。它会组合场景、构图、服装、光线、姿势与表情，生成连贯的英文图像提示词，并内置上游模板快照。
+为支持 Agent Skills 的 AI 客户端提供成年、虚构、亚洲风格 editorial 或 boudoir 图像提示词。它会组合场景、构图、服装、光线、姿势与表情，生成连贯的英文图像提示词，并内置上游模板快照。
 
 ## 安装
 
@@ -64,3 +64,7 @@ git diff --check
 ```
 
 这两个检查不依赖具体客户端。若本机安装了 Codex Skill Creator，可额外运行其 `quick_validate.py`。发布前确认 `SKILL.md`、`references/upstream/` 和 `references/source-map.md` 都在提交中；`agents/openai.yaml` 是可选元数据。
+
+## 备注
+
+该技能修改自 [nsfw-prompt-templates-asian](https://github.com/ShuaiHui/nsfw-prompt-templates-asian) 
