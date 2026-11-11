@@ -64,7 +64,19 @@ test -f SKILL.md
 git diff --check
 ```
 
-这两个检查不依赖具体客户端。若本机安装了 Codex Skill Creator，可额外运行其 `quick_validate.py`。发布前确认 `SKILL.md`、`references/upstream/` 和 `references/source-map.md` 都在提交中；`agents/openai.yaml` 是可选元数据。
+这两个检查不依赖具体客户端。若本机安装了 Codex Skill Creator，可额外运行其 `quick_validate.py`。发布前确认 `SKILL.md`、`references/upstream/`、`references/source-map.md` 与 `references/pose-atlas-anhao.md` 都在提交中；`agents/openai.yaml` 是可选元数据。
+
+### 发布与推送
+
+本仓库同时是本地安装源。修改技能后直接提交并推送到 `main`：
+
+```bash
+git add -A
+git commit -m "Update skill"
+git push origin main
+```
+
+推送后用 `git ls-remote origin refs/heads/main` 核对远端 HEAD 与本地一致，避免“本地提交成功但远端未生效”。其他机器更新技能时，在技能目录内执行 `git pull --ff-only` 即可。推送需要对该仓库有写权限的 GitHub 凭据。
 
 ## 备注
 
