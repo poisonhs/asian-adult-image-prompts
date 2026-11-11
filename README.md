@@ -53,6 +53,7 @@ $asian-adult-image-prompts
 - `agents/openai.yaml`：可选的 OpenAI/Codex 界面元数据；不影响其他 Agent Skills 客户端使用 `SKILL.md`。
 - `references/upstream/`：完整 Markdown 快照，包括范例、14 个模块和 README。
 - `references/source-map.md`：固定版本、归属和授权说明。
+- `references/pose-atlas-anhao.md`：姿势/服装/发型分类总表（1,439 条姿势、3,224 套服装、1,499 条人像），含中文分类体系与中英提示词映射规则。
 
 ## 开发与校验
 
