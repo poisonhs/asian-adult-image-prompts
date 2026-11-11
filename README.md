@@ -78,6 +78,3 @@ git push origin main
 
 推送后用 `git ls-remote origin refs/heads/main` 核对远端 HEAD 与本地一致，避免“本地提交成功但远端未生效”。其他机器更新技能时，在技能目录内执行 `git pull --ff-only` 即可。推送需要对该仓库有写权限的 GitHub 凭据。
 
-## 备注
-
-该技能修改自 [nsfw-prompt-templates-asian](https://github.com/ShuaiHui/nsfw-prompt-templates-asian) 
