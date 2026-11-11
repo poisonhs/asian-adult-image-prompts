@@ -75,3 +75,7 @@ Mention any material assumption in `Brief`. Do not expose a long chain of reason
 - Axis rotation: when the user says 换场景/姿势/职业/镜头/丝袜/画风, regenerate the whole batch with that one axis changed and everything else fresh; the user rejects repeated compositions.
 - Named-character series: for 「阿离」 use the anchor `Ali (阿离), an adult Chinese woman with almond eyes, long straight black hair, a small beauty mark under her left eye`; keep it verbatim across sets for face consistency.
 - These prompts target local NSFW-capable models; mainstream online platforms refuse them — say so in 使用提示.
+
+## Maintenance
+
+- This directory is a git working copy of `github.com/poisonhs/asian-adult-image-prompts` (branch `main`, remote `origin`). After editing, commit and push: `git add -A && git commit -m "..." && git push origin main`. The user expects skill updates to land in that repository.
