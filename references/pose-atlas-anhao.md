@@ -188,3 +188,13 @@ P058 双腿之间托腮
 3. **服装**：优先直接用该库的 `关键词` 英文串，再补颜色/材质细节；写实库关键词偏日常穿搭，二次元库偏制服/奇幻。
 4. **构图公式**：`主体（成年+人数）+ 视角/景别 + 姿势 + 服装状态 + 场景 + 光影 + 画风 + 质量词`，负面词固定兜底（age/anatomy/censor）。
 5. 需要精确复刻时，用「姿势编号 + 视角」组合引用，例如 `P002 正面`、`full_sexy_P001_front`。
+
+## 数据再生成（上游更新时）
+
+- 站点是 JS 渲染：抓 HTML 只能拿到外壳，数据在作者仓库 `github.com/anhao/ai-pose-gallery-zh`（MIT）。
+- 不要整仓 clone（约 1.17 GB、2,878 张图，clone 会超时）；只拉 `data/*.json` 原始文件。
+- 文件树：`https://api.github.com/repos/anhao/ai-pose-gallery-zh/git/trees/HEAD?recursive=1`；原始文件：`https://raw.githubusercontent.com/anhao/ai-pose-gallery-zh/main/<path>`。
+- 需要的文件：`data/pose-zh.json`（1,439）、`data/costume-zh.json`（1,407）、`data/costume-gia-anime-zh.json`（1,320）、`data/costume-anime-zh.json`（440）、`data/costume-shisei-zh.json`（57）、`data/portrait-zh.json`（1,499）。
+- 姿势字段：`体系 / 姿势编号 / 分类 / 姿势名称 / 角度`；服装字段：`分类 / 服装名称 / 标签[] / 关键词`；人像字段：`分区 / 发长 / 发型名称`。
+- 去重规则：按 `(体系, 姿势编号, 姿势名称)` 聚合，角度应得 5 个（偶有 4 个）；288 组由 1,439 ÷ 5 得出。
+- 重生成「姿势全表」时按 体系 → 分类 排序，保持 `Pxxx 名称、Pxxx 名称` 单行格式，避免表格被拆散。
